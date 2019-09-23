@@ -1,0 +1,53 @@
+<div class="container">
+  <h3 class="booking">Create a new Booking</h3>
+  <form id="booking" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+
+      <fieldset>
+        <input placeholder="Customer Name" type="text" name="Customer Name" class="form-control"
+               [(ngModel)]="booking.customerName"
+               #customerName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && customerName.invalid }" required autofocus tabindex="1">
+        <div *ngIf="f.submitted && customerName.invalid" class="invalid-feedback">
+          <div *ngIf="customerName.errors.required">Customer Name is required</div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <input placeholder="Pickup Date" type="datetime-local" id="datetime" name="Pickup Date" class="form-control"
+               [(ngModel)]="booking.pickupDateTime" #pickupDate="ngModel"
+               [ngClass]="{ 'is-invalid': f.submitted && pickupDate.invalid }" required tabindex="2">
+        <div *ngIf="f.submitted && pickupDate.invalid" class="invalid-feedback">
+          <div *ngIf="pickupDate.errors.required">Pick up Date is required</div>
+        </div>
+        <div class="invalid-feedback" *ngIf="error.isError">{{error.errorMessage}}</div>
+      </fieldset>
+
+      <fieldset>
+      <input type="text" placeholder="Pickup Locality" name="Pickup Locality" class="form-control" [(ngModel)]="booking.pickupLocality"
+             #pickUp="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pickUp.invalid }" required tabindex="3">
+      <div *ngIf="f.submitted && pickUp.invalid" class="invalid-feedback">
+        <div *ngIf="customerName.errors.required">Pickup location is required</div>
+      </div>
+      </fieldset>
+
+      <fieldset>
+      <input type="text" placeholder="Drop Off Locality" name="dropoff" class="form-control" [(ngModel)]="booking.dropOffLocality"
+             #dropoff="ngModel" [ngClass]="{ 'is-invalid': f.submitted && dropoff.invalid }" required tabindex="4">
+      <div *ngIf="f.submitted && dropoff.invalid" class="invalid-feedback">
+        <div *ngIf="customerName.errors.required">Drop off location is required</div>
+      </div>
+      </fieldset>
+
+      <fieldset>
+        <textarea type="textarea"  placeholder="Notes" name="Notes" class="form-control" [(ngModel)]="booking.notes" tabindex="5"></textarea>
+      </fieldset>
+
+    <fieldset>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending" tabindex="6">Submit</button>
+    </fieldset>
+
+  </form>
+</div>
+
+
+
+

@@ -1,0 +1,53 @@
+#booking {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+#booking h3 {
+  display: block;
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+#booking td, #booking th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#booking tr:nth-child(even){background-color: #f2f2f2;}
+
+#booking tr:hover {background-color: #ddd;}
+
+#booking th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+#booking button[type="submit"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #6c95af;
+  color: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+#booking button[type="submit"]:hover {
+  background: #275baf;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#booking button[type="submit"]:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,42 @@
+<div class="container" ngModel="response as response">
+  <h3>View Booking</h3>
+  <table id="booking">
+    <ng-template [ngIf]="response.status == 'OK'" [ngIfElse]="noRecord">
+        <tr>
+          <td>Booking Id</td>
+          <td>{{response.payload.id}}</td>
+        </tr>
+        <tr>
+          <td>Customer Name</td>
+          <td>{{response.payload.customerName}}</td>
+        </tr>
+        <tr>
+          <td>Pick Up Locality</td>
+          <td>{{response.payload.pickupLocality}}</td>
+        </tr>
+        <tr>
+          <td>Pick up Date and Time</td>
+          <td>{{response.payload.pickupDateTime}}</td>
+        </tr>
+        <tr>
+          <td>Drop of Locality</td>
+          <td>{{response.payload.dropOffLocality}}</td>
+        </tr>
+        <tr>
+          <td>Notes</td>
+          <td>{{response.payload.notes}}</td>
+        </tr>
+
+    </ng-template>
+    <ng-template #noRecord>
+        <tr>
+          <td>{{response.error.reason}}</td>
+        </tr>
+    </ng-template>
+    <tr>
+      <td colspan="2"> <button type="submit" id="goback" class="btn btn-primary" (click)="goBackToHome()">Back</button></td>
+    </tr>
+  </table>
+
+
+</div>
